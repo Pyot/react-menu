@@ -37,4 +37,6 @@ npm start
 - use **fontawesome**
 
 ## Screen designs
+![mobile](<https://raw.githubusercontent.com/Awaymo/react-technical-test/master/design/mobile.png>)
 
+![desktop](<https://raw.githubusercontent.com/Awaymo/react-technical-test/master/design/desktop.png>)
