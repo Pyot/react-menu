@@ -1,7 +1,13 @@
 import React from 'react';
 import DesktopMenu from 'components/Menus/DesktopMenu/DesktopMenuContainer';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle} from 'styled-components';
 
+const GlobalStyles = createGlobalStyle`
+  body {
+    @import url('https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap');
+    font-family: 'Lato', sans-serif;
+  }
+`
 const theme = {
   masterColor: "rgb(253, 99, 101)"
 }
@@ -9,6 +15,7 @@ const theme = {
 function App() {
   return (
     <div className="App">
+      <GlobalStyles/>
       <ThemeProvider theme={theme}>
         <DesktopMenu/>
       </ThemeProvider>
