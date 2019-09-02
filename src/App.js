@@ -17,7 +17,10 @@ function App() {
     <div className="App">
       <GlobalStyles/>
       <ThemeProvider theme={theme}>
-        <DesktopMenu/>
+        <>
+          <div>menu</div>
+          <DesktopMenu/>
+        </>
       </ThemeProvider>
     </div>
   );
