@@ -9,7 +9,8 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 const theme = {
-  masterColor: "rgb(253, 99, 101)"
+  bg: "rgb(253, 99, 101)",
+  textColor: "white"
 }
 
 function App() {
