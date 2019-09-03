@@ -30,3 +30,11 @@ test("render body - user badge", () => {
     expect(getByText(/dominik/i)).toBeTruthy()
     expect(getByText(/1500.00/i)).toBeTruthy()
 })
+
+test("render footer - check company details", () => {
+    const { getByText } = render (<DesktopMenu data={data}/>);
+
+    expect(getByText(/we're here/i)).toBeTruthy();
+    expect(getByText(/20 8050/i)).toBeTruthy()
+    expect(getByText(/support/i)).toBeTruthy()
+})
