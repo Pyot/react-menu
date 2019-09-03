@@ -5,6 +5,7 @@ import { v4 } from 'uuid';
 import { Header, Logo, Button, Close } from 'components/Menus/DesktopMenu/Header/Header';
 import { Body, List, Wrapper } from 'components/Menus/DesktopMenu/Body/Body';
 import ListItem from 'components/Menus/DesktopMenu/ListItem/ListItem';
+import UserBadge from 'components/Menus/DesktopMenu/UserBadge/UserBadge';
 
 
 const Menu = styled.header`
@@ -43,6 +44,11 @@ const DesktopMenuContainer = ({ data }) => {
                     </List>
                 </Wrapper>
                 <Wrapper>
+                    <UserBadge
+                        name={data.user.name}
+                        available={data.user.available}
+                        avatar={data.user.avatar}
+                    />
                     <List>
                         {data.desktopUser.map(item => <ListItem key={v4()} item={item} type={'user-menu'} />)}
                     </List>

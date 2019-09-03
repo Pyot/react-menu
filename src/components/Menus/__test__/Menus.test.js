@@ -22,3 +22,11 @@ test("render body - main and user menu", () => {
     expect(getAllByTestId('main-menu').length).toEqual(data.desktopMain.length);
     expect(getAllByTestId('user-menu').length).toEqual(data.desktopMain.length);    
 })
+
+test("render body - user badge", () => {
+    const { getByAltText, getByText } = render (<DesktopMenu data={data}/>);
+
+    expect(getByAltText('avatar')).toBeTruthy();
+    expect(getByText(/dominik/i)).toBeTruthy()
+    expect(getByText(/1500.00/i)).toBeTruthy()
+})
