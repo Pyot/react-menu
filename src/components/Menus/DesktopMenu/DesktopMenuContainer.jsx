@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { v4 } from 'uuid';
 
 import { Header, Logo, Button, Close } from 'components/Menus/DesktopMenu/Header/Header';
-import { Body, List, Wrapper } from 'components/Menus/DesktopMenu/Body/Body';
+import { Body, List, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
 import ListItem from 'components/Menus/DesktopMenu/ListItem/ListItem';
 import UserBadge from 'components/Menus/DesktopMenu/UserBadge/UserBadge';
-
+import { Footer, Line } from 'components/Menus/DesktopMenu/Footer/Footer';
 
 const Menu = styled.header`
     position: fixed;
@@ -23,12 +23,11 @@ const MenuWrapper = styled.div`
     max-width: 1236px;
     margin: auto;
     padding: 0px 52px;
-
 `
 
 
 const DesktopMenuContainer = ({ data }) => {
-    return(
+    return (
         <Menu>
             <MenuWrapper>
                 <Header>
@@ -38,22 +37,28 @@ const DesktopMenuContainer = ({ data }) => {
                     </Button>
                 </Header>
                 <Body>
-                <Wrapper>
-                    <List>
-                        {data.desktopMain.map(item => <ListItem key={v4()} item={item} type={'main-menu'} />)}
-                    </List>
-                </Wrapper>
-                <Wrapper>
-                    <UserBadge
-                        name={data.user.name}
-                        available={data.user.available}
-                        avatar={data.user.avatar}
-                    />
-                    <List>
-                        {data.desktopUser.map(item => <ListItem key={v4()} item={item} type={'user-menu'} />)}
-                    </List>
-                </Wrapper>
+                    <BodyWrapper>
+                        <List>
+                            {data.desktopMain.map(item => <ListItem key={v4()} item={item} type={'main-menu'} />)}
+                        </List>
+                    </BodyWrapper>
+                    <BodyWrapper>
+                        <UserBadge
+                            name={data.user.name}
+                            available={data.user.available}
+                            avatar={data.user.avatar}
+                        />
+                        <List>
+                            {data.desktopUser.map(item => <ListItem key={v4()} item={item} type={'user-menu'} />)}
+                        </List>
+                    </BodyWrapper>
                 </Body>
+                <Footer>
+                        <Line/>
+                        <div>We're here to help</div>
+                        <div>+44 (0) 20 8050 3459</div>
+                        <div>support@awaymo.com</div>
+                </Footer>
             </MenuWrapper>
         </Menu>
     )

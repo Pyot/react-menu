@@ -12,7 +12,7 @@ export const List = styled.ul`
     padding: 0px;
     letter-spacing: -1px;
 `
-export const Wrapper = styled.div`
+export const BodyWrapper = styled.div`
     flex: 1;
     max-width: 400px;
 `

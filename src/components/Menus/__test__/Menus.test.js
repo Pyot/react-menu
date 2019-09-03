@@ -36,5 +36,5 @@ test("render footer - check company details", () => {
 
     expect(getByText(/we're here/i)).toBeTruthy();
     expect(getByText(/20 8050/i)).toBeTruthy()
-    expect(getByText(/support/i)).toBeTruthy()
+    expect(getByText(/support@awaymo/i)).toBeTruthy()
 })
