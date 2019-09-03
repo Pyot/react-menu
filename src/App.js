@@ -1,6 +1,8 @@
 import React from 'react';
 import DesktopMenu from 'components/Menus/DesktopMenu/DesktopMenuContainer';
-import styled, { ThemeProvider, createGlobalStyle} from 'styled-components';
+import { ThemeProvider, createGlobalStyle} from 'styled-components';
+import data from './data-mockup/data.js';
+
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -14,13 +16,15 @@ const theme = {
 }
 
 function App() {
+  
+
   return (
     <div className="App">
       <GlobalStyles/>
       <ThemeProvider theme={theme}>
         <>
           <div>menu</div>
-          <DesktopMenu/>
+          <DesktopMenu data={data}/>
         </>
       </ThemeProvider>
     </div>
