@@ -1,6 +1,10 @@
 import React from 'react';
 import DesktopMenu from 'components/Menus/DesktopMenu/DesktopMenuContainer';
+import MobileMenu from 'components/Menus/MobileMenu/MobileMenuContainer';
+
 import { ThemeProvider, createGlobalStyle} from 'styled-components';
+import { Body, List, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
+
 import data from './data-mockup/data.js';
 
 
@@ -24,7 +28,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <>
           <div>menu</div>
-          <DesktopMenu data={data}/>
+          {/* <DesktopMenu data={data}/> */}
+          <MobileMenu data={data}/>
         </>
       </ThemeProvider>
     </div>

@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
 
-import { Header, Logo, Button, Close } from 'components/Menus/DesktopMenu/Header/Header';
+import { Header, Logo, Button, Close, Spacer } from 'components/Menus/Header/Header';
 import { Body, List, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
 import ListItem from 'components/Menus/DesktopMenu/ListItem/ListItem';
 import UserBadge from 'components/Menus/DesktopMenu/UserBadge/UserBadge';
-import { Footer, Line } from 'components/Menus/DesktopMenu/Footer/Footer';
+import { Footer, Line } from 'components/Menus/Footer/Footer';
 
 const Menu = styled.header`
     position: fixed;
@@ -31,6 +31,7 @@ const DesktopMenuContainer = ({ data }) => {
         <Menu>
             <MenuWrapper>
                 <Header>
+                    <Spacer/>
                     <Logo alt={'logo'} />
                     <Button data-testid="close-button">
                         <Close />

@@ -17,10 +17,10 @@ export const Logo = styled.img.attrs({
 })`
     height: 35px;
 `
-export const Button = styled.div`
-
-`
+export const Button = styled.div``
 
 export const Close = styled.img.attrs({
     src: 'whiteClose.svg'
 })``
+
+export const Spacer = styled.div``
