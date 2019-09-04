@@ -6,7 +6,8 @@ export const Footer = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    min-height: 40vh;
+    min-height: 15vh;
+    margin-bottom: 40px;
 `
 export const Line = styled.div`
     width: 100%;

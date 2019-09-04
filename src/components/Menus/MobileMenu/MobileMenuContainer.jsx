@@ -10,12 +10,12 @@ import { Footer, Line } from 'components/Menus/Footer/Footer';
 
 
 const Menu = styled.header`
-    position: fixed;
+    position: absolute;
     top:0;
     left:0;
     background: ${props => props.theme.bg};
     color: ${props => props.theme.textColor};
-    height: 100vh;
+    height: auto;
     width: 100vw;
     z-index: 999;
 `
@@ -49,7 +49,6 @@ const MenuContainer = ({data}) => {
                         </List>
                     </BodyWrapper>
                 </Body>
-                
                 <Footer>
                         <Line/>
                         <div>We're here to help</div>
