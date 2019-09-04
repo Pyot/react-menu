@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 
 import { Header, Logo, Button, Close, Spacer } from 'components/Menus/Header/Header';
 import { Body, BodyWrapper } from 'components/Menus/MobileMenu/Body/Body';
-// import ListItem from 'components/Menus/MobileMenu/ListItem/ListItem';
+import { List, ListItem }  from 'components/Menus/MobileMenu/List/List';
 import UserBadge from 'components/Menus/MobileMenu/UserBadge/UserBadge';
 import { Footer, Line } from 'components/Menus/Footer/Footer';
 
@@ -44,14 +44,9 @@ const MenuContainer = ({data}) => {
                             available={data.user.available}
                             avatar={data.user.avatar}
                         />
-                        <ul>
-                            <li>
-                                test
-                            </li>
-                            <li>
-                                test
-                            </li>
-                        </ul>
+                        <List>
+                        {data.mobile.map(item => <ListItem key={v4()} item={item} type={'mobile'} />)}
+                        </List>
                     </BodyWrapper>
                 </Body>
                 

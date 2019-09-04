@@ -8,11 +8,13 @@ import data from 'data-mockup/data.js';
 
 test("render header - logo inside desktop menu", () => {
     const { getByAltText } = render (<DesktopMenu data={data}/>);
+    
     expect(getByAltText('logo')).toBeTruthy();
 })
 
 test("render header - close button inside desktop menu", () => {
     const { getByTestId } = render (<DesktopMenu data={data}/>);
+    
     expect(getByTestId('close-button')).toBeTruthy();
 })
 

@@ -8,17 +8,20 @@ import data from 'data-mockup/data.js';
 
 test("render header - logo inside mobile menu", () => {
     const { getByAltText } = render (<MobileMenu data={data}/>);
+    
     expect(getByAltText('logo')).toBeTruthy();
 })
 
 test("render header - close button inside mobile menu", () => {
     const { getByTestId } = render (<MobileMenu data={data}/>);
+    
     expect(getByTestId('close-button')).toBeTruthy();
 })
 
-test("render footer - check company details", () => {
-    const { getByText } = render (<MobileMenu data={data}/>);
-    expect(getByText(/we're here/i)).toBeTruthy();
+test("render body - main and user menu", () => {
+    const { getAllByTestId } = render (<MobileMenu data={data}/>);
+
+    expect(getAllByTestId('mobile').length).toEqual(data.mobile.length);
 })
 
 test("render body - user badge", () => {
@@ -28,3 +31,10 @@ test("render body - user badge", () => {
     expect(getByText(/dominik/i)).toBeTruthy()
     expect(getByText(/1500.00/i)).toBeTruthy()
 })
+
+test("render footer - check company details mobile menu", () => {
+    const { getByText } = render (<MobileMenu data={data}/>);
+    
+    expect(getByText(/we're here/i)).toBeTruthy();
+})
+
