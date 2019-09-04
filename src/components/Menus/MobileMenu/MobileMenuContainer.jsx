@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { v4 } from 'uuid';
 
 import { Header, Logo, Button, Close, Spacer } from 'components/Menus/Header/Header';
-import { Body, List, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
-import ListItem from 'components/Menus/DesktopMenu/ListItem/ListItem';
-import UserBadge from 'components/Menus/DesktopMenu/UserBadge/UserBadge';
+import { Body, BodyWrapper } from 'components/Menus/MobileMenu/Body/Body';
+// import ListItem from 'components/Menus/MobileMenu/ListItem/ListItem';
+import UserBadge from 'components/Menus/MobileMenu/UserBadge/UserBadge';
 import { Footer, Line } from 'components/Menus/Footer/Footer';
 
 
@@ -21,7 +21,6 @@ const Menu = styled.header`
 `
 
 const MenuWrapper = styled.div`
-    max-width: 1236px;
     margin: auto;
     padding: 0px 52px;
 `
@@ -38,12 +37,27 @@ const MenuContainer = ({data}) => {
                         <Close />
                     </Button>
                 </Header>
+                <Body>
+                    <BodyWrapper>
+                        <UserBadge
+                            name={data.user.name}
+                            available={data.user.available}
+                            avatar={data.user.avatar}
+                        />
+                        <ul>
+                            <li>
+                                test
+                            </li>
+                            <li>
+                                test
+                            </li>
+                        </ul>
+                    </BodyWrapper>
+                </Body>
                 
                 <Footer>
                         <Line/>
                         <div>We're here to help</div>
-                        <div>+44 (0) 20 8050 3459</div>
-                        <div>support@awaymo.com</div>
                 </Footer>
             </MenuWrapper>
         </Menu>
