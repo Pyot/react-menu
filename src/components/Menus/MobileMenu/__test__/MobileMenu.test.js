@@ -20,3 +20,11 @@ test("render footer - check company details", () => {
     const { getByText } = render (<MobileMenu data={data}/>);
     expect(getByText(/we're here/i)).toBeTruthy();
 })
+
+test("render body - user badge", () => {
+    const { getByAltText, getByText } = render (<MobileMenu data={data}/>);
+
+    expect(getByAltText('avatar')).toBeTruthy();
+    expect(getByText(/dominik/i)).toBeTruthy()
+    expect(getByText(/1500.00/i)).toBeTruthy()
+})
