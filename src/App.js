@@ -1,8 +1,9 @@
 import React from 'react';
+import { ThemeProvider, createGlobalStyle} from 'styled-components';
+
+import NavigationBar from 'components/NavigationBar/NavigationBarContainer'
 import DesktopMenu from 'components/Menus/DesktopMenu/DesktopMenuContainer';
 import MobileMenu from 'components/Menus/MobileMenu/MobileMenuContainer';
-
-import { ThemeProvider, createGlobalStyle} from 'styled-components';
 import { Body, List, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
 
 import data from './data-mockup/data.js';
@@ -27,9 +28,9 @@ function App() {
       <GlobalStyles/>
       <ThemeProvider theme={theme}>
         <>
-          <div>menu</div>
+          <NavigationBar/>
           {/* <DesktopMenu data={data}/> */}
-          <MobileMenu data={data}/>
+          {/* <MobileMenu data={data}/> */}
         </>
       </ThemeProvider>
     </div>
