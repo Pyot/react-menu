@@ -9,7 +9,7 @@ import UserBadge from 'components/Menus/DesktopMenu/UserBadge/UserBadge';
 import { Footer, Line } from 'components/Menus/Footer/Footer';
 
 const Menu = styled.header`
-    position: fixed;
+    overflow-y: scroll;
     top:0;
     left:0;
     background: ${props => props.theme.bg};
@@ -24,7 +24,6 @@ const MenuWrapper = styled.div`
     margin: auto;
     padding: 0px 52px;
 `
-
 
 const DesktopMenuContainer = ({ data }) => {
     return (

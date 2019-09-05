@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { MenusContext } from 'context/MenusContext';
+
 
 const List = styled.ul`
   list-style-type: none;
@@ -27,11 +29,18 @@ const Button = styled.button`
 `
 
 const NavigationBarContainer = (props) => {
+  const { menus, setMenus } = useContext(MenusContext);
+
+  const openMenu = ({ ...menus }) => {
+    menus.open = !menus.open;
+    setMenus(menus)
+  }
+
   return (
     <nav>
       <List data-testid="navigation-list">
         <ListItem>
-          <Button data-testid="menu-burger">
+          <Button onClick={openMenu.bind(this, menus)} data-testid="menu-burger">
             <img src="burgerIcon.svg" alt="burger-menu" />
           </Button>
         </ListItem>

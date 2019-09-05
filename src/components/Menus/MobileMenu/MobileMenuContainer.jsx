@@ -10,17 +10,18 @@ import { Footer, Line } from 'components/Menus/Footer/Footer';
 
 
 const Menu = styled.header`
-    position: absolute;
+    overflow-y: scroll;
     top:0;
     left:0;
     background: ${props => props.theme.bg};
     color: ${props => props.theme.textColor};
-    height: auto;
+    height: 100vh;
     width: 100vw;
     z-index: 999;
 `
 
 const MenuWrapper = styled.div`
+
     margin: auto;
     padding: 0px 52px;
 `
