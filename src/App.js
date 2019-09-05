@@ -2,8 +2,6 @@ import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import NavigationBar from 'components/NavigationBar/NavigationBarContainer'
-import DesktopMenu from 'components/Menus/DesktopMenu/DesktopMenuContainer';
-import MobileMenu from 'components/Menus/MobileMenu/MobileMenuContainer';
 import MenusSelector from 'components/Menus/MenuSelector/MenuSelector';
 import MenusContextProvider from 'context/MenusContext.jsx';
 
@@ -26,7 +24,7 @@ function App() {
         <GlobalStyles />
         <ThemeProvider theme={theme}>
           <>
-            <MenusSelector />
+            <MenusSelector switchOn={800} />
             <NavigationBar />
           </>
         </ThemeProvider>
