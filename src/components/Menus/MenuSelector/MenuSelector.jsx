@@ -10,25 +10,50 @@ import data from 'data-mockup/data.js';
 
 // Style for CSSTransition 
 const SlideUpDown = styled.div`
-       &.slide-enter {
+       &.slide-up-down-enter {
             transform: translateY(-100%);
             transition: transform .5s ease;
         }
         
-        &.slide-enter-active {
+        &.slide-up-down-enter-active {
             transform: translateY(0%);
         }
 
-        &.slide-exit {
+        &.slide-up-down-exit {
             transform: translateY(0%);
         }
         
-        &.slide-exit-active {
+        &.slide-up-down-exit-active {
             transform: translateY(-100%);
             transition: transform .3s;
         }
 
-        &.slide-enter-done > header {
+        &.slide-up-down-enter-done > header {
+            position: absolute;
+        }
+`
+
+const SlideLeftRight = styled.div`
+
+        &.slide-left-right-enter {
+            transform: translateX(200%);
+            transition: transform .5s ease;
+        }
+
+        &.slide-left-right-enter-active {
+            transform: translateX(0%);
+        }
+
+        &.slide-left-right-exit {
+            transform: translateX(0%);
+        }
+
+        &.slide-left-right-exit-active {
+            transform: translateX(100%);
+            transition: transform .3s;  
+        }
+
+        &.slide-left-right-enter-done > header {
             position: absolute;
         }
 `
@@ -36,17 +61,28 @@ const SlideUpDown = styled.div`
 
 const MenusSelector = () => {
     const { menus } = useContext(MenusContext)
-    
+
     return (
+        // <CSSTransition
+        //     in={menus.open}
+        //     timeout={500}
+        //     classNames="slide-up-down"
+        //     unmountOnExit
+        // >
+        //     <SlideUpDown>
+        //         <DesktopMenu data={data} />
+        //     </SlideUpDown>
+        // </CSSTransition>
+
         <CSSTransition
             in={menus.open}
             timeout={500}
-            classNames="slide"
+            classNames="slide-left-right"
             unmountOnExit
         >
-            <SlideUpDown>
-                <DesktopMenu data={data}/>
-            </SlideUpDown>
+            <SlideLeftRight>
+                <MobileMenu data={data} />
+            </SlideLeftRight>
         </CSSTransition>
     )
 }
