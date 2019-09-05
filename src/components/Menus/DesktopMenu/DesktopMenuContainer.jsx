@@ -28,10 +28,10 @@ const MenuWrapper = styled.div`
 
 const DesktopMenuContainer = ({ data }) => {
     return (
-        <Menu>
+        <Menu data-testid="menu">
             <MenuWrapper>
                 <Header>
-                    <Spacer/>
+                    <Spacer />
                     <Logo alt={'logo'} />
                     <Button data-testid="close-button">
                         <Close />
@@ -55,10 +55,10 @@ const DesktopMenuContainer = ({ data }) => {
                     </BodyWrapper>
                 </Body>
                 <Footer>
-                        <Line/>
-                        <div>We're here to help</div>
-                        <div>+44 (0) 20 8050 3459</div>
-                        <div>support@awaymo.com</div>
+                    <Line />
+                    <div>We're here to help</div>
+                    <div>+44 (0) 20 8050 3459</div>
+                    <div>support@awaymo.com</div>
                 </Footer>
             </MenuWrapper>
         </Menu>

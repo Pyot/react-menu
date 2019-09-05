@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 
 import { Header, Logo, Button, Close, Spacer } from 'components/Menus/Header/Header';
 import { Body, BodyWrapper } from 'components/Menus/MobileMenu/Body/Body';
-import { List, ListItem }  from 'components/Menus/MobileMenu/List/List';
+import { List, ListItem } from 'components/Menus/MobileMenu/List/List';
 import UserBadge from 'components/Menus/MobileMenu/UserBadge/UserBadge';
 import { Footer, Line } from 'components/Menus/Footer/Footer';
 
@@ -26,12 +26,12 @@ const MenuWrapper = styled.div`
 `
 
 
-const MenuContainer = ({data}) => {
+const MenuContainer = ({ data }) => {
     return (
-        <Menu>
+        <Menu data-testid="menu">
             <MenuWrapper>
                 <Header>
-                    <Spacer/>
+                    <Spacer />
                     <Logo alt={'logo'} />
                     <Button data-testid="close-button">
                         <Close />
@@ -45,13 +45,13 @@ const MenuContainer = ({data}) => {
                             avatar={data.user.avatar}
                         />
                         <List>
-                        {data.mobile.map(item => <ListItem key={v4()} item={item} type={'mobile'} />)}
+                            {data.mobile.map(item => <ListItem key={v4()} item={item} type={'mobile'} />)}
                         </List>
                     </BodyWrapper>
                 </Body>
                 <Footer>
-                        <Line/>
-                        <div>We're here to help</div>
+                    <Line />
+                    <div>We're here to help</div>
                 </Footer>
             </MenuWrapper>
         </Menu>
