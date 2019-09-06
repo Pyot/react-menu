@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { MenusContext } from 'context/MenusContext';
 
-
 const List = styled.ul`
-  list-style-type: none;
+    width: 100vw;
+    position: absolute;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;

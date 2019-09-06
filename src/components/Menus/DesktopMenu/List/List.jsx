@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//Resposible for desktop menu items generating.
+export const List = styled.ul`
+    font-weight:900;
+    font-size: 2.3rem;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: -1px;
+`
 
 const Item = styled.li`
   :nth-child(${props => props.type === 'main-menu' && 3}){
@@ -14,7 +23,7 @@ const Link = styled.a`
     float: left;
 `
 
-const ListItem = ({ item, type }) => {
+export const ListItem = ({ item, type }) => {
     return (
         <Item type={type}>
             <Link href={item.href}
@@ -24,5 +33,3 @@ const ListItem = ({ item, type }) => {
         </Item>
     )
 }
-
-export default ListItem

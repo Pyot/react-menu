@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
-    flex-grow: ${props => props.flexGrow && props.flexGrow};
+    flex-grow: ${props => props.flex && props.flex};
     display: flex;
     border-bottom: 1px solid #fda1a2;
     padding-bottom: 30px;
@@ -23,6 +23,7 @@ const AvatarOuter = styled.div`
     border-radius: 50px;
     float: ${props => props.float && props.float};
 `
+
 const Avatar = styled.div`
     height: 68px;
     width: 68px;
@@ -53,10 +54,9 @@ const Info = styled.div`
 const Span = styled.span`
     text-align: left;
 `
-
-
+//Resposible for generating desktop menu user information section.
 const UserBadge = ({ name, available, avatar }) =>
-    <Wrapper flexGrow={1}>
+    <Wrapper>
         <AvatarOuter float={'left'}>
             <Avatar>
                 <Image src={avatar ? avatar : 'avatar.png'}

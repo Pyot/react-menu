@@ -24,8 +24,8 @@ function App() {
         <GlobalStyles />
         <ThemeProvider theme={theme}>
           <>
-            <MenusSelector switchOn={800} />
             <NavigationBar />
+            <MenusSelector switchOn={800} />
           </>
         </ThemeProvider>
       </MenusContextProvider>

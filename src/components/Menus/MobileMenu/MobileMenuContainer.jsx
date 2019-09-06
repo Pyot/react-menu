@@ -21,7 +21,6 @@ const Menu = styled.header`
 `
 
 const MenuWrapper = styled.div`
-
     margin: auto;
     padding: 0px 52px;
 `

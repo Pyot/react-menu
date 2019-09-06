@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { v4 } from 'uuid';
 
 import { Header, Logo, Button, Close, Spacer, closeMenu } from 'components/Menus/Header/Header';
-import { Body, List, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
-import ListItem from 'components/Menus/DesktopMenu/ListItem/ListItem';
+import { Body, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
+import { List, ListItem } from 'components/Menus/DesktopMenu/List/List';
 import UserBadge from 'components/Menus/DesktopMenu/UserBadge/UserBadge';
 import { Footer, Line } from 'components/Menus/Footer/Footer';
 import { MenusContext } from 'context/MenusContext';
@@ -28,9 +28,9 @@ const MenuWrapper = styled.div`
 `
 
 const DesktopMenuContainer = ({ data }) => {
-    
+
     const { menus, setMenus } = useContext(MenusContext);
-    
+
     return (
         <Menu data-testid="menu">
             <MenuWrapper>

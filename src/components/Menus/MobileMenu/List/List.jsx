@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle, faPlane, faCreditCard, faLifeRing, 
         faPhone, faSignOutAlt, faQuestionCircle, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 
-
-
 export const List = styled.ul`
     font-size: 1.3rem;
     list-style: none;
@@ -51,7 +49,7 @@ export const ListItem = ({ item, type }) => {
             case "FAQ":
                 return <FontAwesomeIcon icon={faInfoCircle} />
             default:
-            // code block
+                return <i></i>
         }
     }
     return (
@@ -59,7 +57,6 @@ export const ListItem = ({ item, type }) => {
             {generateIcon(item.name)}
             <Link href={item.href}
                 data-testid={type}>
-                
                 {item.name}
             </Link>
         </Item>
