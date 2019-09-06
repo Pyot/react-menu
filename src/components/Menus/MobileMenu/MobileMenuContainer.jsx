@@ -6,7 +6,7 @@ import { Header, Logo, Button, Close, Spacer, closeMenu } from 'components/Menus
 import { Body, BodyWrapper } from 'components/Menus/MobileMenu/Body/Body';
 import { List, ListItem } from 'components/Menus/MobileMenu/List/List';
 import UserBadge from 'components/Menus/MobileMenu/UserBadge/UserBadge';
-import { Footer, Line } from 'components/Menus/Footer/Footer';
+import { Footer, Line, Span } from 'components/Menus/Footer/Footer';
 import { MenusContext } from 'context/MenusContext';
 
 const Menu = styled.header`
@@ -25,8 +25,8 @@ const MenuWrapper = styled.div`
     padding: 0px 52px;
 `
 
-
-const MenuContainer = ({ data }) => {
+//Menu for mobile.
+const MenuMobileContainer = ({ data }) => {
 
     const { menus, setMenus } = useContext(MenusContext);
 
@@ -54,11 +54,11 @@ const MenuContainer = ({ data }) => {
                 </Body>
                 <Footer>
                     <Line />
-                    <div>We're here to help</div>
+                    <Span fontSize={"1.3rem"}>We're here to help</Span>
                 </Footer>
             </MenuWrapper>
         </Menu>
     )
 }
 
-export default MenuContainer
+export default MenuMobileContainer

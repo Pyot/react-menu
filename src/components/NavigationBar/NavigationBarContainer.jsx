@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { MenusContext } from 'context/MenusContext';
 
 const List = styled.ul`
-    width: 100vw;
     position: absolute;
+    width: 100vw;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -23,13 +23,14 @@ const Button = styled.button`
     background-color: ${props => props.theme.bg};
     border: none;
     &:hover {
-      background-color: ${props => props.theme.bg};
       color: white;
       opacity: 0.5;
+      background-color: ${props => props.theme.bg};
   }
 `
 
-const NavigationBarContainer = (props) => {
+const NavigationBarContainer = () => {
+
   const { menus, setMenus } = useContext(MenusContext);
 
   const openMenu = ({ ...menus }) => {

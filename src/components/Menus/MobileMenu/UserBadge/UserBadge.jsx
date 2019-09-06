@@ -39,18 +39,18 @@ const Info = styled.div`
 
 const Span = styled.span`
     text-align: center;
-    font-size: ${props => props.size && props.size };
+    font-size: ${props => props.size && props.size};
 `
 
-
+//It generate mobile menu user information section.
 const UserBadge = ({ name, available, avatar }) =>
     <Wrapper>
         <AvatarOuter>
-                <Image src={avatar ? avatar : 'avatar.png'}
+            <Image src={avatar ? avatar : 'avatar.png'}
                 alt={'avatar'}
-                />
+            />
         </AvatarOuter>
-        <Info>  
+        <Info>
             <Span>{name}</Span>
             <Span size={'1rem'}>Avaiable Balance</Span>
             <Span>&pound; {available} </Span>

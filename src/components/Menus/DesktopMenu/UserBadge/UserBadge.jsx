@@ -54,8 +54,8 @@ const Info = styled.div`
 const Span = styled.span`
     text-align: left;
 `
-//Resposible for generating desktop menu user information section.
-const UserBadge = ({ name, available, avatar }) =>
+//It generate desktop menu user information section.
+const UserBadge = ({ name, surename, available, avatar }) =>
     <Wrapper>
         <AvatarOuter float={'left'}>
             <Avatar>
@@ -65,7 +65,7 @@ const UserBadge = ({ name, available, avatar }) =>
             </Avatar>
         </AvatarOuter>
         <Info>  
-            <Span>{name}</Span>
+            <Span>{name + ' ' + surename}</Span>
             <Span>&pound; {available} Avaiable</Span>
         </Info>
     </Wrapper>

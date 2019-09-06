@@ -30,6 +30,8 @@ const Link = styled.a`
 `
 
 export const ListItem = ({ item, type }) => {
+    
+    //It selects a correct icon for certain menu item.
     const generateIcon = (itemName) => {
         switch (itemName) {
             case "Profile":

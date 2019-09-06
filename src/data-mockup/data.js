@@ -20,7 +20,7 @@ const data = {
     { name: "About", href: "/about-us" },
     { name: "FAQ", href: "/faq" }],
 
-    user: { name: "Dominik", surname:"Biel",  available: "1500.00", avatar: null }
+    user: { name: "Dominik", surename:"Biel",  available: "1500.00", avatar: null }
 } 
 
 export default data

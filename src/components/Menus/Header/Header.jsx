@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
+//
 export const Header = styled.div`
     width: 100%;
     display: flex;
@@ -9,7 +9,7 @@ export const Header = styled.div`
     height: auto;
     padding: 32px 0;
     margin-bottom: 21px;
-    border-bottom: 3px solid #fff;
+    border-bottom: ${props => props.borderThick ? props.borderThick : '1px'} solid #fff;
 `
 
 export const Logo = styled.img.attrs({
@@ -26,7 +26,7 @@ export const Close = styled.img.attrs({
 export const Spacer = styled.div``
 
 export const closeMenu = ( menus, setMenus ) => {
-    let menusClone = {...menus}
+    let menusClone = {...menus};
     menusClone.open = false;
     setMenus(menusClone)
   }

@@ -6,7 +6,6 @@ import App from '../../../App';
 import NavigationBar from 'components/NavigationBar/NavigationBarContainer';
 import { MenusContext } from 'context/MenusContext'
 
-
 afterEach(cleanup)
 
 test("render navigation - check list and burger buton", () => {
@@ -28,7 +27,7 @@ test("render navigation - check list and burger buton", () => {
 
 test("open/close menu after click on the button menu", () => {
     const { getByTestId, queryByTestId } = render (<App/>);
-    //Provide time equal to CSSTransition or longer otherwize JEST check element to quick and result are not real.
+    //Provide time equal to CSSTransition or longer otherwise JEST check element too quick and the result are not real.
     const cssTransitionTime = 1000;
 
     expect(queryByTestId('menu')).toBeNull();

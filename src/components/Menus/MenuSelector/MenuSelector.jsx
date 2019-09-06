@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 
@@ -8,9 +8,8 @@ import { useWindowWidth } from 'hooks/UseWindowWidth';
 import { MenusContext } from 'context/MenusContext';
 import data from 'data-mockup/data.js';
 
-// Style for CSSTransition.
-// To create dieffrent transition please create another wrapper base on SlideUpDown.
-// To keep elemen on top of the rest of the site remember add .your-class-enter-done as is below. 
+//Styles for CSSTransition.
+//To create a different transition. Please create another wrapper based on SlideUpDown.
 const SlideUpDown = styled.div`
        &.slide-up-down-enter {
             transform: translateY(-100%);
@@ -30,9 +29,6 @@ const SlideUpDown = styled.div`
             transition: transform .3s;
         }
 
-        &.slide-up-down-enter-done > header {
-            position: absolute;
-        }
 `
 
 const SlideLeftRight = styled.div`
@@ -55,41 +51,48 @@ const SlideLeftRight = styled.div`
             transition: transform .3s;  
         }
 
-        &.slide-left-right-enter-done > header {
-            position: absolute;
-        }
 `
 
-//It manage which menu should be open on ceratin window width.
-//Break point for switching is provide by switchOn props.
-//Menu auto switch when user change winows size without closing.
+//It allows a sliding menu above the page content without moving it left, right or up and down.
+ const Positioner = styled.div`
+  position: absolute;
+  z-index: 999;
+`
+
+//It manages which menu should be open on certain window width.
+//Breakpoint for switching is provided by switch On props.
+//Menu auto switch when the user changes windows size without closing it.
 const MenusSelector = ({ switchOn }) => {
 
     const { menus } = useContext(MenusContext);
     let width = useWindowWidth();
 
-    return width > switchOn ?
-        <CSSTransition
-            in={menus.open}
-            timeout={500}
-            classNames="slide-up-down"
-            unmountOnExit
-        >
-            <SlideUpDown>
-                <DesktopMenu data={data} />
-            </SlideUpDown>
-        </CSSTransition>
-        :
-        <CSSTransition
-            in={menus.open}
-            timeout={500}
-            classNames="slide-left-right"
-            unmountOnExit
-        >
-            <SlideLeftRight>
-                <MobileMenu data={data} />
-            </SlideLeftRight>
-        </CSSTransition>
+    return (
+        <Positioner>
+            {width > switchOn ?
+                <CSSTransition
+                    in={menus.open}
+                    timeout={500}
+                    classNames="slide-up-down"
+                    unmountOnExit
+                >
+                    <SlideUpDown>
+                        <DesktopMenu data={data} />
+                    </SlideUpDown>
+                </CSSTransition>
+                :
+                <CSSTransition
+                    in={menus.open}
+                    timeout={500}
+                    classNames="slide-left-right"
+                    unmountOnExit
+                >
+                    <SlideLeftRight>
+                        <MobileMenu data={data} />
+                    </SlideLeftRight>
+                </CSSTransition>}
+        </Positioner>
+    )
 }
 
 export default MenusSelector

@@ -4,7 +4,7 @@ export const MenusContext = createContext();
 
 const MenusContextProvider = (props) => {
     
-    const [ menus, setMenus ] = useState({ open: false })
+    const [ menus, setMenus ] = useState({ open: false });
 
     return (
         <MenusContext.Provider value={{ menus, setMenus }}>

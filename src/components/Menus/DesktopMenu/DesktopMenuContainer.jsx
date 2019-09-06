@@ -6,7 +6,7 @@ import { Header, Logo, Button, Close, Spacer, closeMenu } from 'components/Menus
 import { Body, BodyWrapper } from 'components/Menus/DesktopMenu/Body/Body';
 import { List, ListItem } from 'components/Menus/DesktopMenu/List/List';
 import UserBadge from 'components/Menus/DesktopMenu/UserBadge/UserBadge';
-import { Footer, Line } from 'components/Menus/Footer/Footer';
+import { Footer, Line, Span } from 'components/Menus/Footer/Footer';
 import { MenusContext } from 'context/MenusContext';
 
 
@@ -26,7 +26,7 @@ const MenuWrapper = styled.div`
     margin: auto;
     padding: 0px 52px;
 `
-
+//Menu for destkops.
 const DesktopMenuContainer = ({ data }) => {
 
     const { menus, setMenus } = useContext(MenusContext);
@@ -34,7 +34,7 @@ const DesktopMenuContainer = ({ data }) => {
     return (
         <Menu data-testid="menu">
             <MenuWrapper>
-                <Header>
+                <Header borderThick={'3px'}>
                     <Spacer />
                     <Logo alt={'logo'} />
                     <Button onClick={closeMenu.bind(this, menus, setMenus)} data-testid="close-button">
@@ -50,6 +50,7 @@ const DesktopMenuContainer = ({ data }) => {
                     <BodyWrapper>
                         <UserBadge
                             name={data.user.name}
+                            surename={data.user.surename}
                             available={data.user.available}
                             avatar={data.user.avatar}
                         />
@@ -58,11 +59,11 @@ const DesktopMenuContainer = ({ data }) => {
                         </List>
                     </BodyWrapper>
                 </Body>
-                <Footer>
+                <Footer marginTop={"20vh"}>
                     <Line />
-                    <div>We're here to help</div>
-                    <div>+44 (0) 20 8050 3459</div>
-                    <div>support@awaymo.com</div>
+                    <Span>We're here to help</Span>
+                    <Span>+44 (0) 20 8050 3459</Span>
+                    <Span>support@awaymo.com</Span>
                 </Footer>
             </MenuWrapper>
         </Menu>
