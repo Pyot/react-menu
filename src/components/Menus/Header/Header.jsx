@@ -24,3 +24,11 @@ export const Close = styled.img.attrs({
 })``
 
 export const Spacer = styled.div``
+
+// const { menus, setMenus } = useContext(MenusContext);
+export  const closeMenu = ( menus, setMenus ) => {
+    console.log("TCL: closeMenu -> setMenus", setMenus)
+    let menusClone = {...menus}
+    menusClone.open = false;
+    setMenus(menusClone)
+  }

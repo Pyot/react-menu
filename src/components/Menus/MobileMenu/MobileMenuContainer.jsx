@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
 
-import { Header, Logo, Button, Close, Spacer } from 'components/Menus/Header/Header';
+import { Header, Logo, Button, Close, Spacer, closeMenu } from 'components/Menus/Header/Header';
 import { Body, BodyWrapper } from 'components/Menus/MobileMenu/Body/Body';
 import { List, ListItem } from 'components/Menus/MobileMenu/List/List';
 import UserBadge from 'components/Menus/MobileMenu/UserBadge/UserBadge';
 import { Footer, Line } from 'components/Menus/Footer/Footer';
-
+import { MenusContext } from 'context/MenusContext';
 
 const Menu = styled.header`
     overflow-y: scroll;
@@ -28,13 +28,16 @@ const MenuWrapper = styled.div`
 
 
 const MenuContainer = ({ data }) => {
+
+    const { menus, setMenus } = useContext(MenusContext);
+
     return (
         <Menu data-testid="menu">
             <MenuWrapper>
                 <Header>
                     <Spacer />
                     <Logo alt={'logo'} />
-                    <Button data-testid="close-button">
+                    <Button onClick={closeMenu.bind(this, menus, setMenus)} data-testid="close-button">
                         <Close />
                     </Button>
                 </Header>
