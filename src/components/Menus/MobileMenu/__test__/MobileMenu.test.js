@@ -4,28 +4,61 @@ import '@testing-library/jest-dom/extend-expect';
 
 
 import MobileMenu from 'components/Menus/MobileMenu/MobileMenuContainer';
+import { MenusContext } from 'context/MenusContext';
 import data from 'data-mockup/data.js';
 
 test("render header - logo inside mobile menu", () => {
-    const { getByAltText } = render (<MobileMenu data={data}/>);
-    
+    let menus = { open: true };
+
+    const tree = (
+        <MenusContext.Provider value={{ menus }}>
+            <MobileMenu data={data} />
+        </MenusContext.Provider>
+    );
+
+    const { getByAltText } = render(tree);
+
     expect(getByAltText('logo')).toBeTruthy();
 })
 
 test("render header - close button inside mobile menu", () => {
-    const { getByTestId } = render (<MobileMenu data={data}/>);
-    
+    let menus = { open: true };
+
+    const tree = (
+        <MenusContext.Provider value={{ menus }}>
+            <MobileMenu data={data} />
+        </MenusContext.Provider>
+    );
+
+    const { getByTestId } = render(tree);
+
     expect(getByTestId('close-button')).toBeTruthy();
 })
 
 test("render body - main and user menu", () => {
-    const { getAllByTestId } = render (<MobileMenu data={data}/>);
+    let menus = { open: true };
+
+    const tree = (
+        <MenusContext.Provider value={{ menus }}>
+            <MobileMenu data={data} />
+        </MenusContext.Provider>
+    );
+
+    const { getAllByTestId } = render(tree);
 
     expect(getAllByTestId('mobile').length).toEqual(data.mobile.length);
 })
 
 test("render body - user badge", () => {
-    const { getByAltText, getByText } = render (<MobileMenu data={data}/>);
+    let menus = { open: true };
+
+    const tree = (
+        <MenusContext.Provider value={{ menus }}>
+            <MobileMenu data={data} />
+        </MenusContext.Provider>
+    );
+
+    const { getByAltText, getByText } = render(tree);
 
     expect(getByAltText('avatar')).toBeTruthy();
     expect(getByText(/dominik/i)).toBeTruthy()
@@ -33,8 +66,16 @@ test("render body - user badge", () => {
 })
 
 test("render footer - check company details mobile menu", () => {
-    const { getByText } = render (<MobileMenu data={data}/>);
-    
+    let menus = { open: true };
+
+    const tree = (
+        <MenusContext.Provider value={{ menus }}>
+            <MobileMenu data={data} />
+        </MenusContext.Provider>
+    );
+
+    const { getByText } = render(tree);
+
     expect(getByText(/we're here/i)).toBeTruthy();
 })
 

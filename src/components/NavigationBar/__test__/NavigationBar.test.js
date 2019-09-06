@@ -26,11 +26,17 @@ test("render navigation - check list and burger buton", () => {
     expect(getByTestId('menu-burger')).toBeTruthy();
 })
 
-test("open menu after click on the button menu", () => {
+test("open/close menu after click on the button menu", () => {
     const { getByTestId, queryByTestId } = render (<App/>);
+    //Provide time equal to CSSTransition or longer otherwize JEST check element to quick and result are not real.
+    const cssTransitionTime = 1000;
 
     expect(queryByTestId('menu')).toBeNull();
 
     fireEvent.click(getByTestId('menu-burger'));
     expect(getByTestId('menu')).toBeInTheDocument();
+    fireEvent.click(getByTestId('close-button'));
+    setTimeout(() => {
+        expect(queryByTestId('menu')).toBeNull();
+    }, cssTransitionTime);
 })
